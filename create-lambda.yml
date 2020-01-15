@@ -9,6 +9,7 @@
     - name: "Create a role and attach a managed policy called 'PowerUserAccess'"
       iam_role:
         name: "{{ role }}"
+        assume_role_policy_document: "{{ lookup('file','policy.json') }}"
         managed_policy:
           - arn:aws:iam::aws:policy/CloudWatchFullAccess
 
