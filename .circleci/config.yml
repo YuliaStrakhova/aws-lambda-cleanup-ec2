@@ -54,7 +54,7 @@ jobs:
           command:  |
             source  venv/bin/activate
             ansible all -m ping
-            ansible-playbook create-lambda.yml
+            ansible-playbook create-lambda.yml -vvv
 
 
       - store_artifacts:
