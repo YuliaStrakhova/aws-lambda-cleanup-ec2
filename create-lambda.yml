@@ -7,10 +7,10 @@
 
   tasks:
     - name: "Create a role and attach a managed policy called 'PowerUserAccess'"
-        iam_role:
-          name: "{{ role }}"
-          managed_policy:
-            - arn:aws:iam::aws:policy/CloudWatchFullAccess
+      iam_role:
+        name: "{{ role }}"
+        managed_policy:
+          - arn:aws:iam::aws:policy/CloudWatchFullAccess
 
     - name: add zip
       archive:
@@ -24,8 +24,3 @@
         handler: lambda.my_lambda
         role: "{{ role }}"
 
-    - name: "Create a role and attach a managed policy called 'PowerUserAccess'"
-      iam_role:
-        name: "{{ role }}"
-        managed_policy:
-          - arn:aws:iam::aws:policy/CloudWatchFullAccess
