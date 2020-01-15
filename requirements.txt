@@ -1,7 +1,6 @@
 #1
 ansible
 boto
-botocore
 boto3
 #
 #
