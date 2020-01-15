@@ -1,0 +1,31 @@
+- name: Create an ubuntu instance on Amazon EC2
+  hosts: localhost
+  vars:
+     region: us-east-1
+     role: lambda-cleanup-role
+
+
+  tasks:
+    - name: "Create a role and attach a managed policy called 'PowerUserAccess'"
+        iam_role:
+          name: "{{ role }}"
+          managed_policy:
+            - arn:aws:iam::aws:policy/CloudWatchFullAccess
+
+    - name: add zip
+      archive:
+        path: ./terminate-ec2.py
+    - name: my lambda function
+      lambda:
+        state: present
+        name: my_lambda
+        zip_file: terminate-ec2.py.zip
+        runtime: python2.7
+        handler: lambda.my_lambda
+        role: "{{ role }}"
+
+    - name: "Create a role and attach a managed policy called 'PowerUserAccess'"
+      iam_role:
+        name: "{{ role }}"
+        managed_policy:
+          - arn:aws:iam::aws:policy/CloudWatchFullAccess
