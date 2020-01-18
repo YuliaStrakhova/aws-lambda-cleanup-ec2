@@ -19,6 +19,7 @@
     - name: my lambda function
       lambda:
         state: present
+        region: us-east-1
         name: my_lambda
         zip_file: terminate-ec2.py.zip
         runtime: python2.7
