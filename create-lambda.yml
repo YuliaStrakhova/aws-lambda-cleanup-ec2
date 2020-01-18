@@ -17,13 +17,14 @@
     - name: add zip
       archive:
         path: ./terminate-ec2.py
+        format: zip
 
     - name: my lambda function
       lambda:
         state: present
         region: us-east-1
         name: my_lambda
-        zip_file: terminate-ec2.py.gz
+        zip_file: terminate-ec2.py.zip
         runtime: python2.7
         handler: lambda.my_lambda
         role: "{{ role }}"
