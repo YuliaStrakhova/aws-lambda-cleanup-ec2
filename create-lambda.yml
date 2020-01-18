@@ -23,7 +23,7 @@
         state: present
         region: us-east-1
         name: my_lambda
-        zip_file: terminate-ec2.py.zip
+        zip_file: terminate-ec2.py.gz
         runtime: python2.7
         handler: lambda.my_lambda
         role: "{{ role }}"
