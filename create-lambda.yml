@@ -17,6 +17,7 @@
     - name: add zip
       archive:
         path: ./terminate-ec2.py
+
     - name: my lambda function
       lambda:
         state: present
