@@ -4,7 +4,7 @@ REGION= 'us-east-1'
 
 def lambda_handler(event, context):
     print(1)
-    ec2 = boto3.resource('ec2')
+    ec2 = boto3.resource('ec2', region_name=REGION)
     print(2)
     for instance in ec2.instances:
         print(3)
