@@ -13,6 +13,7 @@
         region: us-east-1
         managed_policy:
           - arn:aws:iam::aws:policy/CloudWatchFullAccess
+          - arn:aws:iam::aws:policy/AmazonEC2FullAccess
 
     - name: add zip
       archive:
