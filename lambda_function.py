@@ -10,9 +10,9 @@ def lambda_handler(event, context):
 
     print(ec2.instances.all())
     for instance in ec2.instances.all():
-       print(2)
-       print(instance)
-       print(3)
-       ec2_cl = boto3.client('ec2')
-       ec2_cl.terminate_instances(InstanceIds=[instance.id])
-       print("Stoped\n\n")
+        print(2)
+        print(instance)
+        print(3)
+        ec2_cl = boto3.client('ec2')
+        ec2_cl.terminate_instances(InstanceIds=[instance.id])
+        print("Stoped\n\n")
