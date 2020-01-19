@@ -14,6 +14,7 @@
         managed_policy:
           - arn:aws:iam::aws:policy/CloudWatchFullAccess
           - arn:aws:iam::aws:policy/AmazonEC2FullAccess
+          - arn:aws:iam::aws:policy/AWSXrayFullAccess
 
     - name: add zip
       archive:
