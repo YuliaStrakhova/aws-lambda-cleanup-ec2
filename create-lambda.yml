@@ -27,7 +27,7 @@
         region: us-east-1
         name: my_lambda
         zip_file: lambda_function.py.zip
-        runtime: python2.7
+        runtime: python3.7
         handler: lambda_function.lambda_handler
         role: "{{ role }}"
 
