@@ -18,7 +18,7 @@ def log_event_on_error(handler):
 
     return wrapper
 
-@log_event_on_error
+
 def lambda_handler(event, context):
     print(0)
     ec2 = boto3.resource('ec2', region_name=REGION)
