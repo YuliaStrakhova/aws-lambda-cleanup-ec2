@@ -22,7 +22,7 @@ def log_event_on_error(handler):
 def lambda_handler(event, context):
     print(0)
     ec2 = boto3.resource('ec2', region_name=REGION)
-    print(1)
+    print(ec2)
     for instance in ec2.instances.all():
         print(2)
         print(instance)
