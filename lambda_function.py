@@ -1,9 +1,26 @@
 import boto3
+import functools
+import sys
 
 REGION = 'us-east-1'
 
 
+
+
+def log_event_on_error(handler):
+    @functools.wraps(handler)
+    def wrapper(event, context):
+        try:
+            return handler(event, context)
+        except Exception:
+            print('event = %r' % event)
+            raise
+
+    return wrapper
+
+@log_event_on_error
 def lambda_handler(event, context):
+    print(0)
     ec2 = boto3.resource('ec2', region_name=REGION)
     print(1)
     for instance in ec2.instances.all():
