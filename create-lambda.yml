@@ -16,7 +16,7 @@
 
     - name: add zip
       archive:
-        path: ./terminate-ec2.py
+        path: ./lambda_function.py
         format: zip
 
     - name: my lambda function
@@ -24,7 +24,7 @@
         state: present
         region: us-east-1
         name: my_lambda
-        zip_file: terminate-ec2.py.zip
+        zip_file: lambda_function.py.zip
         runtime: python2.7
         handler: lambda.my_lambda
         role: "{{ role }}"
